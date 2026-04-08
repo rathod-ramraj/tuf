@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 30 30% 97%;
+    --foreground: 20 20% 15%;
+
+    --card: 30 25% 95%;
+    --card-foreground: 20 20% 15%;
+
+    --popover: 30 30% 97%;
+    --popover-foreground: 20 20% 15%;
+
+    --primary: 16 60% 48%;
+    --primary-foreground: 30 30% 97%;
+
+    --secondary: 140 20% 60%;
+    --secondary-foreground: 140 30% 15%;
+
+    --muted: 30 15% 90%;
+    --muted-foreground: 20 10% 50%;
+
+    --accent: 36 70% 65%;
+    --accent-foreground: 20 20% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 16 60% 48%;
+
+    --radius: 0.75rem;
+
+    --cal-range-bg: 16 60% 48% / 0.12;
+    --cal-start: 16 60% 48%;
+    --cal-end: 140 20% 50%;
+    --cal-today: 36 70% 65%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 30 20% 90%;
+
+    --card: 20 15% 14%;
+    --card-foreground: 30 20% 90%;
+
+    --popover: 20 15% 10%;
+    --popover-foreground: 30 20% 90%;
+
+    --primary: 16 55% 55%;
+    --primary-foreground: 20 15% 10%;
+
+    --secondary: 140 18% 35%;
+    --secondary-foreground: 140 20% 90%;
+
+    --muted: 20 10% 20%;
+    --muted-foreground: 20 10% 60%;
+
+    --accent: 36 60% 50%;
+    --accent-foreground: 20 15% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 10% 22%;
+    --input: 20 10% 22%;
+    --ring: 16 55% 55%;
+
+    --cal-range-bg: 16 55% 55% / 0.15;
+    --cal-start: 16 55% 55%;
+    --cal-end: 140 18% 45%;
+    --cal-today: 36 60% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
