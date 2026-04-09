@@ -48,21 +48,18 @@ This project follows **Principal Engineer** standards for modular, maintainable 
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 1. Clone the repository
 * npm
   ```bash
-  npm install npm@latest -g
+  git clone https://github.com/Krishna27Singh/Calender.git
 
-  Installation
-Clone the repo
+### 2. Install dependencies
+* npm
+  ```bash
+  npm install 
 
-Bash
-git clone [https://github.com/yourusername/seasonal-calendar.git](https://github.com/yourusername/seasonal-calendar.git)
-Install NPM packages
+### 3. Start the development server
+* npm
+  ```bash
+  npm run dev
 
-Bash
-npm install
-Run the development server
-
-Bash
-npm run dev
