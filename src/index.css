@@ -38,9 +38,10 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
+    /* Range edge circles: must match each other until/for applyThemeColors (avoids FOUC mismatch). */
     --cal-range-bg: 16 60% 48% / 0.12;
     --cal-start: 16 60% 48%;
-    --cal-end: 140 20% 50%;
+    --cal-end: 16 60% 48%;
     --cal-today: 36 70% 65%;
 
     --sidebar-background: 0 0% 98%;
@@ -84,7 +85,7 @@ All colors MUST be HSL.
 
     --cal-range-bg: 16 55% 55% / 0.15;
     --cal-start: 16 55% 55%;
-    --cal-end: 140 18% 45%;
+    --cal-end: 16 55% 55%;
     --cal-today: 36 60% 50%;
 
     --sidebar-background: 240 5.9% 10%;

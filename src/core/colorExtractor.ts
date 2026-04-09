@@ -1,3 +1,5 @@
+import { CALENDAR_CSS_VARIABLES } from "@/constants/calendarTheme";
+
 export interface ExtractedTheme {
   h: number;
   s: number;
@@ -65,8 +67,7 @@ export async function extractDominantColor(
 
 /**
  * Apply extracted theme to CSS variables.
- * Both start & end circles use the same primary color;
- * range background uses the primary at low opacity.
+ * Start/end/range share one hue so the calendar never shows mismatched endpoint colors.
  */
 export function applyThemeColors(theme: ExtractedTheme) {
   const root = document.documentElement;
@@ -75,16 +76,18 @@ export function applyThemeColors(theme: ExtractedTheme) {
   const vibrantS = Math.min(s + 15, 80);
   const vibrantL = Math.max(Math.min(l, 55), 40);
 
-  // Primary color — used for both start and end date circles
-  root.style.setProperty("--primary", `${h} ${vibrantS}% ${vibrantL}%`);
-  root.style.setProperty("--cal-start", `${h} ${vibrantS}% ${vibrantL}%`);
-  root.style.setProperty("--cal-end", `${h} ${vibrantS}% ${vibrantL}%`);
-  root.style.setProperty("--ring", `${h} ${vibrantS}% ${vibrantL}%`);
+  const edge = `${h} ${vibrantS}% ${vibrantL}%`;
+  root.style.setProperty(CALENDAR_CSS_VARIABLES.primary, edge);
+  root.style.setProperty(CALENDAR_CSS_VARIABLES.calStart, edge);
+  root.style.setProperty(CALENDAR_CSS_VARIABLES.calEnd, edge);
+  root.style.setProperty(CALENDAR_CSS_VARIABLES.ring, edge);
 
-  // Range background — same hue at low opacity
-  root.style.setProperty("--cal-range-bg", `${h} ${vibrantS}% ${vibrantL}% / 0.12`);
+  // Same hue at low opacity so range wash matches endpoint rings.
+  root.style.setProperty(CALENDAR_CSS_VARIABLES.calRangeBg, `${h} ${vibrantS}% ${vibrantL}% / 0.12`);
 
-  // Accent — complementary shift
   const compH = (h + 140) % 360;
-  root.style.setProperty("--accent", `${compH} ${Math.max(vibrantS - 10, 20)}% ${vibrantL + 15}%`);
+  root.style.setProperty(
+    CALENDAR_CSS_VARIABLES.accent,
+    `${compH} ${Math.max(vibrantS - 10, 20)}% ${vibrantL + 15}%`,
+  );
 }

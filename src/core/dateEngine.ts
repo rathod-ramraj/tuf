@@ -12,7 +12,35 @@ import {
   isAfter,
   isBefore,
   isToday,
+  isWeekend,
 } from "date-fns";
+
+/** Major 2026 Indian & global holidays (local calendar dates). */
+export const HOLIDAYS_2026: Record<string, string> = {
+  "2026-01-01": "New Year's Day",
+  "2026-01-26": "Republic Day",
+  "2026-03-03": "Holi",
+  "2026-04-03": "Good Friday",
+  "2026-05-01": "Labour Day",
+  "2026-08-15": "Independence Day",
+  "2026-10-02": "Gandhi Jayanti",
+  "2026-11-08": "Diwali",
+  "2026-12-25": "Christmas",
+};
+
+export type DayMetadata = {
+  isWeekend: boolean;
+  holidayName: string | null;
+};
+
+export function getDayMetadata(date: Date): DayMetadata {
+  const key = format(date, "yyyy-MM-dd");
+  const holidayName = HOLIDAYS_2026[key] ?? null;
+  return {
+    isWeekend: isWeekend(date),
+    holidayName,
+  };
+}
 
 export interface CalendarDay {
   date: Date;

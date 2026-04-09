@@ -1,5 +1,11 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { loadNotes, saveNotes, type Note } from "@/core/storageService";
+import {
+  loadNotes,
+  saveNotes,
+  deleteNote as persistDeleteNote,
+  updateNote as persistUpdateNote,
+  type Note,
+} from "@/core/storageService";
 import { formatISO, parseISO, isBefore, isAfter, isSameDay } from "date-fns";
 import { useCalendar } from "@/context/CalendarContext";
 
@@ -70,12 +76,24 @@ const addNote = useCallback((text: string, startDate: Date, endDate: Date | null
     setNotes(newNotes);
   }, [notes]);
 
+  const deleteNote = useCallback((noteId: string) => {
+    const newNotes = persistDeleteNote(noteId);
+    setNotes(newNotes);
+  }, []);
+
+  const updateNote = useCallback((noteId: string, newText: string) => {
+    const newNotes = persistUpdateNote(noteId, newText);
+    setNotes(newNotes);
+  }, []);
+
   const hasSelection = !!rangeStart || !!focusedDate;
 
-return { 
+  return {
     notes,
-    addNote, 
-    hasSelection, 
-    isSingleSelection 
+    addNote,
+    deleteNote,
+    updateNote,
+    hasSelection,
+    isSingleSelection,
   };
 }

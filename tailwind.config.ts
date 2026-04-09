@@ -53,8 +53,9 @@ export default {
         },
         cal: {
           range: "hsl(var(--cal-range-bg))",
+          /* Single source for range endpoints; --cal-end is kept identical in CSS + colorExtractor */
           start: "hsl(var(--cal-start))",
-          end: "hsl(var(--cal-end))",
+          end: "hsl(var(--cal-start))",
           today: "hsl(var(--cal-today))",
         },
         sidebar: {
