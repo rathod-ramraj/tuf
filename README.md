@@ -11,7 +11,6 @@
 
   ---
 
-  ### [Live Demo](#) · [Report Bug](https://github.com/yourusername/project/issues) · [Request Feature](https://github.com/yourusername/project/issues)
 
 </div>
 
@@ -49,17 +48,17 @@ This project follows **Principal Engineer** standards for modular, maintainable 
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
-* npm
+* 
   ```bash
   git clone https://github.com/Krishna27Singh/Calender.git
 
 ### 2. Install dependencies
-* npm
+* 
   ```bash
   npm install 
 
 ### 3. Start the development server
-* npm
+* 
   ```bash
   npm run dev
 
