@@ -1,62 +1,68 @@
-🗓️ Premium Seasonal Calendar
-A high-fidelity, interactive React calendar designed with a focus on fluid UX, 3D aesthetics, and seasonal context. This isn't just a date picker; it’s a productivity workspace that adapts its visual identity based on the time of year.
+<div align="center">
 
-✨ Key Features
-🎨 Dynamic Seasonal Identity
-Intelligent Hero Pane: Automatically shuffles through a curated library of local high-resolution landscape images relevant to the current month.
+  # 🗓️ Premium Seasonal Calendar
+  
+  **A high-fidelity, interactive React calendar designed for fluid UX, 3D aesthetics, and seasonal context.**
+  
+  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+  [![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-Adaptive Theme Engine: Extracts dominant tones from seasonal imagery to unify the calendar's accent colors, rings, and highlights.
+  ---
 
-🕹️ Advanced Interaction Design
-3D Page Flip: A custom Framer Motion implementation that simulates a physical desk calendar flipping (Horizontal on Desktop, Vertical on Mobile).
+  ### [Live Demo](#) · [Report Bug](https://github.com/yourusername/project/issues) · [Request Feature](https://github.com/yourusername/project/issues)
 
-Hover-to-Select Range: Buttery smooth date range selection with real-time visual feedback before the final click.
+</div>
 
-Yearly Navigation: Click the main header to jump into a "Month/Year Picker" for rapid navigation across the timeline.
+## 🌟 Key Features
 
-📝 Integrated Productivity Workspace
-Smart Reminders: Set single-day or multi-day range reminders. Each reminder is deterministically color-coded (avoiding red to prevent holiday confusion).
+### 🎨 Dynamic Seasonal Identity
+- **Intelligent Hero Pane:** Automatically shuffles through a curated library of local high-resolution landscape images relevant to the current month.
+- **Adaptive Theme Engine:** Extracts dominant tones from seasonal imagery to unify the calendar's accent colors, rings, and highlights.
 
-Rich Text Notes: Markdown-supported notes area featuring custom styles for <u>underlines</u> and <mark>highlights</mark>.
+### 🕹️ Advanced Interaction Design
+- **3D Page Flip:** A custom Framer Motion implementation simulating a physical desk calendar flipping (**Horizontal on Desktop, Vertical on Mobile**).
+- **Hover-to-Select Range:** Buttery smooth date range selection with real-time visual feedback before the final click.
+- **Yearly Navigation:** Interactive header allows jumping into a "Month/Year Picker" for rapid timeline navigation.
 
-Contextual Banner: A proactive top-bar that alerts you to today's holidays (e.g., Diwali, Christmas) or upcoming personal reminders at a glance.
+### 📝 Integrated Productivity Workspace
+- **Smart Reminders:** Set single-day or multi-day range reminders. Deterministically color-coded (avoiding red to prevent holiday confusion).
+- **Rich Text Notes:** Markdown-supported workspace featuring custom styles for `<u>underlines</u>` and `<mark>highlights</mark>`.
+- **Contextual Banner:** Proactive top-bar alerting you to today's holidays (e.g., Diwali, Christmas) or upcoming personal reminders.
 
-🛠️ Tech Stack & Architecture
-This project follows Principal Engineer standards for clean, modular code:
+---
 
-Frontend: React 18 with TypeScript for strict type safety.
+## 🏗️ Project Architecture
 
-Styling: Tailwind CSS using a custom design system and dynamic class injection.
+This project follows **Principal Engineer** standards for modular, maintainable code:
 
-Animations: Framer Motion utilizing AnimatePresence, 3D transforms, and hardware-accelerated transitions.
+| Layer | Responsibility |
+| :--- | :--- |
+| **Context API** | Global state management for dates, themes, and reminders. |
+| **Custom Hooks** | Encapsulated logic for seasonal assets, metadata, and local storage. |
+| **Motion Engine** | Orchestrated 3D transforms and concurrent exit/entry animations. |
+| **Storage Service** | Robust abstraction for LocalStorage persistence. |
 
-State Management: React Context API + useReducer pattern for a robust, predictable data flow.
+---
 
-Data Persistence: LocalStorage-based StorageService to keep your notes and reminders safe across sessions.
+## 🚀 Getting Started
 
-🏗️ Project Structure
-Plaintext
-src/
- ├── components/        # Atomic UI components (Buttons, Grid, Banner)
- ├── context/           # CalendarContext for global state & theme logic
- ├── hooks/             # Custom hooks (useSeasonalHero, useDayMetadata)
- ├── utils/             # Business logic (date math, color hashing)
- ├── types/             # Centralized TypeScript interfaces
- └── public/images/     # Local curated seasonal asset library
-🚀 Getting Started
-Clone the repository:
+### Prerequisites
+* npm
+  ```bash
+  npm install npm@latest -g
+
+  Installation
+Clone the repo
 
 Bash
-git clone https://github.com/yourusername/seasonal-calendar.git
-Install dependencies:
+git clone [https://github.com/yourusername/seasonal-calendar.git](https://github.com/yourusername/seasonal-calendar.git)
+Install NPM packages
 
 Bash
 npm install
-Run the development server:
+Run the development server
 
 Bash
 npm run dev
-💡 Design Philosophy
-"Design is not just what it looks like and feels like. Design is how it works." — Steve Jobs
-
-The architecture focuses on Progressive Disclosure. The UI remains minimalist and clean upon load, only revealing complex tools (like the Workspace panel) once a user selects a date, reducing cognitive load and keeping the focus on the beautiful seasonal imagery.
